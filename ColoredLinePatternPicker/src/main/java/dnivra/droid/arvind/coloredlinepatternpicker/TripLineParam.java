@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-public class LineParam implements Parcelable {
+public class TripLineParam implements Parcelable {
    private long id;
    private long tripid;
    private int color;
@@ -16,13 +16,13 @@ public class LineParam implements Parcelable {
    private float dashGap;
 
 
-    public LineParam() {
+    public TripLineParam() {
         color= Color.parseColor("#801B60FE");
         lnwidth=16;
         dashGap=5;
         dashWidth=5;
     }
-    public LineParam(Parcel p){
+    public TripLineParam(Parcel p){
         this.id=p.readLong();
         this.tripid=p.readLong();
         this.color=p.readInt();
@@ -31,7 +31,7 @@ public class LineParam implements Parcelable {
         this.dashGap=p.readFloat();
         this.dashWidth=p.readFloat();
     }
-    public LineParam(Cursor p){
+    public TripLineParam(Cursor p){
         this.id=p.getLong(0);
         this.tripid=p.getLong(1);
         this.color=p.getInt(2);
@@ -41,7 +41,7 @@ public class LineParam implements Parcelable {
         this.dashWidth=p.getFloat(6);
         Log.e("THIS PARAM",toString());
     }
-    public LineParam(int color, String lnpattern, int lnwidth) {
+    public TripLineParam(int color, String lnpattern, int lnwidth) {
         this.color = color;
         this.lnpattern = lnpattern;
         this.lnwidth = lnwidth;
@@ -102,16 +102,16 @@ public class LineParam implements Parcelable {
         dest.writeFloat(dashGap);
         dest.writeFloat(dashWidth);
     }
-    public static final Creator<LineParam> CREATOR
-            = new Creator<LineParam>(){
+    public static final Creator<TripLineParam> CREATOR
+            = new Creator<TripLineParam>(){
         @Override
-        public LineParam createFromParcel(Parcel source) {
-            return new LineParam(source);
+        public TripLineParam createFromParcel(Parcel source) {
+            return new TripLineParam(source);
         }
 
         @Override
-        public LineParam[] newArray(int size) {
-            return new LineParam[size];
+        public TripLineParam[] newArray(int size) {
+            return new TripLineParam[size];
         }
     };
 
