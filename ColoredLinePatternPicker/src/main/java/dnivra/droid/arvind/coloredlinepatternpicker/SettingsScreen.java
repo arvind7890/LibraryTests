@@ -65,7 +65,7 @@ public class SettingsScreen extends LinearLayout  implements SeekBar.OnSeekBarCh
     public static TripLineParam getTripLineParam(){
         return tlp;
     }
-    public static void setPolyLineParam(long id,long tripid, int color,String lnpattern,int lnwidth,float dashWidth, float dashGap){
+    public static void setPolyLineParam(int color,String lnpattern,int lnwidth,float dashWidth, float dashGap){
 
         tlp=new TripLineParam(color,lnpattern,lnwidth,dashWidth,dashGap);
     }
