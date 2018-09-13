@@ -8,12 +8,12 @@ import android.util.Log;
 
 public class TripLineParam implements Parcelable {
    private long id;
-   private long tripid;
-   private int color;
-   private  String lnpattern;
-   private int lnwidth;
-   private float dashWidth;
-   private float dashGap;
+    private long tripid;
+    private int color;
+    private  String lnpattern;
+    private int lnwidth;
+    private float dashWidth;
+    private float dashGap;
 
 
     public TripLineParam() {
@@ -41,10 +41,12 @@ public class TripLineParam implements Parcelable {
         this.dashWidth=p.getFloat(6);
         Log.e("THIS PARAM",toString());
     }
-    public TripLineParam(int color, String lnpattern, int lnwidth) {
+    public TripLineParam(int color, String lnpattern, int lnwidth, float dashWidth, float dashGap) {
         this.color = color;
         this.lnpattern = lnpattern;
         this.lnwidth = lnwidth;
+        this.dashWidth=dashWidth;
+        this.dashGap=dashGap;
     }
 
     public float getDashWidth() {
