@@ -49,7 +49,7 @@ public class SettingsScreen extends LinearLayout  implements SeekBar.OnSeekBarCh
     ImageView lineView;
 
 
-    public static LineParam tlp;
+    public static TripLineParam tlp;
 
 
 
@@ -62,10 +62,10 @@ public class SettingsScreen extends LinearLayout  implements SeekBar.OnSeekBarCh
     }
 
 
-    public static LineParam getTripLineParam(){
+    public static TripLineParam getTripLineParam(){
         return tlp;
     }
-    public static void setPolyLineParam(LineParam polyLineParam){
+    public static void setPolyLineParam(TripLineParam polyLineParam){
         tlp=polyLineParam;
     }
 
@@ -79,7 +79,7 @@ public class SettingsScreen extends LinearLayout  implements SeekBar.OnSeekBarCh
 
         this.context = context;
         //tlp=((TripLineParamProvider)context).getTripLineParam();
-        if(tlp==null)tlp=new LineParam();
+        if(tlp==null)tlp=new TripLineParam();
         rectColor=tlp.getColor();
 
         Color.colorToHSV(rectColor,LineHsv);

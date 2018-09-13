@@ -11,11 +11,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import dnivra.droid.arvind.coloredlinepatternpicker.ColorPatternPicker;
 import dnivra.droid.arvind.coloredlinepatternpicker.SettingsScreen;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CheckBox.OnCheckedChangeListener{
     SettingsScreen cpp;
     AppCompatButton btn;
     @Override
@@ -55,5 +57,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
     }
 }
